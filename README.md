@@ -3,10 +3,19 @@
 This card requires the home Assistant sensor component for Jumbo.com from peternijssen to be installed:
 https://github.com/peternijssen/home-assistant-jumbo/
 
-### Install
-Use HACS to install this card.
+## Installation
 
-Example config:
+Use [HACS](https://hacs.xyz) or follow this [guide](https://github.com/thomasloven/hass-config/wiki/Lovelace-Plugins)
+
+```yaml
+resources:
+  url: /local/jumbo-card.js
+  type: module
+```
+
+
+
+## Example config:
 
 ```title: Jumbo card
 type: 'custom:jumbo-overview-card'
