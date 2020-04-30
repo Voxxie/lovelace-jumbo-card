@@ -3,11 +3,10 @@
 class JumboOverviewCard extends HTMLElement {
   set hass(hass) {
       
-     const title = this.config.title ? this.config.title : 'Jumbo boodschappen';  
+ 
       
     if (!this.content) {
       const card = document.createElement('ha-card');
-      card.header = title;
       this.content = document.createElement('div');
       this.content.style.padding = '0 16px 16px';
       card.appendChild(this.content);
@@ -100,7 +99,7 @@ class JumboOverviewCard extends HTMLElement {
           }
         
           if (showtimeslot === 'yes'){
-             output += `<div class="jumbo-grid-item"><b>`+ (start.getHours()<10?'0':'') + start.getHours() + `:` +  (start.getMinutes()<10?'0':'') + start.getMinutes() + `</b><br>`+ key.price.format +`</div> `;
+             output += `<div class="jumbo-grid-item"><b>`+ (start.getHours()<10?'0':'') + start.getHours() + `:` +  (start.getMinutes()<10?'0':'') + start.getMinutes() + `</b><br>&euro `+ (key.price.amount /100) +`</div> `;
           }
        
        
