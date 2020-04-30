@@ -6,7 +6,7 @@ This component requires that the custom Jumb components is installed.
 * Display of your current basket
 * display of the avaiable time slots.
 
-#### Configuration options
+## Configuration options
 Option          | Values        | Default   | Details
 --              | -             | -         | -
 show_basket | `true/false` | `true` | Define if the card should display the available timeslots.
