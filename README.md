@@ -13,6 +13,12 @@ resources:
   type: module
 ```
 
+#### Configuration options
+Option          | Values        | Default   | Details
+--              | -             | -         | -
+show_basket | `true/false` | `true` | Define if the card should display the available timeslots.
+show_timeslots | `true/false` | `true` | Define if the card should display the available timeslots.
+timeslot_days | `int` | `99` | Define of how many days of timeslots should be displayed.
 
 
 ## Example config:
