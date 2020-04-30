@@ -151,7 +151,7 @@ class JumboOverviewCard extends HTMLElement {
   
 }
 
-customElements.define('jumbo-overview-card', JumboOverviewCard);
+customElements.define('jumbo-card', JumboOverviewCard);
 
 
 
