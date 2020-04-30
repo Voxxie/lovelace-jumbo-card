@@ -13,7 +13,7 @@ resources:
   type: module
 ```
 
-#### Configuration options
+## Configuration options
 Option          | Values        | Default   | Details
 --              | -             | -         | -
 show_basket | `true/false` | `true` | Define if the card should display the available timeslots.
