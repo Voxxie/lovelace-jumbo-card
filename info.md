@@ -1,5 +1,6 @@
 ## Warning
-This component requires that the custom Jumb components is installed.
+This component requires that the custom Jumbo components to be installed:
+More information: https://github.com/peternijssen/home-assistant-jumbo
 
 ## Features
 
