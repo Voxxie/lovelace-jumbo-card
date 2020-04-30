@@ -1,0 +1,9 @@
+{
+  "postnl-card": {
+    "version": "0.1.1",
+    "updated_at": "2020-04-30",
+    "visit_repo": "https://github.com/Voxxie/home-assistant-jumbo-card",
+    "remote_location": "https://github.com/peternijssen/lovelace-postnl/releases/download/0.1.1/jumbo-card.js",
+    "changelog": "https://github.com/Voxxie/home-assistant-jumbo-card/releases/latest"
+  }
+}
