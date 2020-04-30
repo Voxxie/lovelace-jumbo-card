@@ -25,5 +25,9 @@ show_basket: true
 show_orders: true
 ```
 
+
+## Example image:
+![Test Image 1](https://github.com/Voxxie/lovelace-jumbo-card/blob/master/images/Examplecard.png)
+
 ## Contributors
 * [Hans Vos](https://github.com/Voxxie)
