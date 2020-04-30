@@ -26,7 +26,7 @@ class JumboOverviewCard extends HTMLElement {
         margin: 5px;
         font-size: 14px;
         text-align: center;
-      }</style>`;
+      }</style><br><br>`;
 
     //Define show parameters, and set them to a value if nog defined.
     const show_timeslots = this.config.show_timeslots ? this.config.show_timeslots : 'true';
