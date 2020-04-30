@@ -1,9 +1,0 @@
-{
-  "jumbo-card": {
-    "version": "0.1.2",
-    "updated_at": "2020-04-30",
-    "visit_repo": "https://github.com/Voxxie/home-assistant-jumbo-card",
-    "remote_location": "https://github.com/Voxxie/home-assistant-jumbo-card/releases/download/v0.1.2/jumbo-card.js",
-    "changelog": "https://github.com/Voxxie/home-assistant-jumbo-card/releases/latest"
-  }
-}
