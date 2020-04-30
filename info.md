@@ -13,6 +13,17 @@ show_basket | `true/false` | `true` | Define if the card should display the avai
 show_timeslots | `true/false` | `true` | Define if the card should display the available timeslots.
 timeslot_days | `int` | `99` | Define of how many days of timeslots should be displayed.
 
+
+## Example config:
+
+```title: Jumbo card
+type: 'custom:jumbo-overview-card'
+show_timeslots: true
+timeslot_days: 2
+show_basket: true
+show_orders: true
+```
+
 ## Example image:
 ![Test Image 1](https://github.com/Voxxie/lovelace-jumbo-card/blob/master/images/Examplecard.png)
 
