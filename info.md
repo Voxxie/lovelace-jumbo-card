@@ -18,7 +18,7 @@ timeslot_days | `int` | `99` | Define of how many days of timeslots should be di
 ## Example config:
 
 ```title: Jumbo card
-type: 'custom:jumbo-overview-card'
+type: 'custom:jumbo-card'
 show_timeslots: true
 timeslot_days: 2
 show_basket: true
