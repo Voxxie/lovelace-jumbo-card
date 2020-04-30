@@ -99,7 +99,7 @@ class JumboOverviewCard extends HTMLElement {
           }
         
           if (showtimeslot === 'yes'){
-             output += `<div class="jumbo-grid-item"><b>`+ (start.getHours()<10?'0':'') + start.getHours() + `:` +  (start.getMinutes()<10?'0':'') + start.getMinutes() + `</b><br>&euro `+ (key.price.amount /100) +`</div> `;
+             output += `<div class="jumbo-grid-item"><b>`+ (start.getHours()<10?'0':'') + start.getHours() + `:` +  (start.getMinutes()<10?'0':'') + start.getMinutes() + `</b><br>&euro; `+ (key.price.amount /100) +`</div> `;
           }
        
        
