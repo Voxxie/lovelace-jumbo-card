@@ -1,7 +1,7 @@
 
-## Home Assisant LoveLace card for Jumbo.com
-This card requires the home Assistant sensor component for Jumbo.com from peternijssen to be installed:
-https://github.com/peternijssen/home-assistant-jumbo/
+## Warning
+This component requires that the custom Jumbo components to be installed:
+More information: https://github.com/peternijssen/home-assistant-jumbo
 
 ## Installation
 
