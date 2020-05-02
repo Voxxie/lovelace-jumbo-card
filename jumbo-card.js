@@ -29,22 +29,24 @@ class JumboOverviewCard extends HTMLElement {
       }</style><br>`;
 
     //Define show parameters, and set them to a value if nog defined.
-    const show_timeslots = this.config.show_timeslots ? this.config.show_timeslots : 'true';
-    const show_basket = this.config.show_basket ? this.config.show_basket : 'true';
-    const show_orders = this.config.show_timeslots ? this.config.show_orders : 'true';
-    const timeslot_days = this.config.timeslot_days ? this.config.timeslot_days : '99';
+    const time_slots_delivery = this.config.time_slots_delivery ? this.config.time_slots_delivery : 'unknown'
+	const time_slots_delivery_days = this.config.time_slots_delivery_days ? this.config.time_slots_delivery_days : '99';
+    const time_slots_pickup = this.config.time_slots_pickup ? this.config.time_slots_pickup : 'unknown';
+	const time_slots_pickup_days = this.config.time_slots_pickup_days ? this.config.time_slots_pickup_days : '99';
+    const deliveries = this.config.deliveries ? this.config.deliveries : 'unknown';
+    const basket = this.config.basket ? this.config.basket : 'unknown';
+	
 
     //START show basket
-    if (show_basket === true) {
+    if (basket != 'unknown') {
         
-        const basket = hass.states['sensor.jumbo_basket'];
-        
-        console.log(basket);
+        const basketvar = hass.states[basket];
+
           output += `<h2>Huidig winkelmandje</h2>
                             <table width="100%">
                                 <tr>
-                                    <td width="50%"><center><h3>` + basket.state+ `</h3>items</center></td>
-                                    <td width="50%"><center><h3>` + (basket.attributes.price.amount / 100) + `</h3>euro</center></td>
+                                    <td width="50%"><center><h3>` + basketvar.state+ `</h3>items</center></td>
+                                    <td width="50%"><center><h3>` + (basketvar.attributes.price.amount / 100) + `</h3>euro</center></td>
                                 </tr>
                             </table>`;
         
@@ -54,19 +56,19 @@ class JumboOverviewCard extends HTMLElement {
 
 
     //START Loop orders
-    if (show_orders === true) {
+    if (deliveries != 'unknown') {
         
     }
     //END Loop orders
 
 
 
-    //START Loop timeslots
-    if (show_timeslots === true) {
+    //START Loop timeslots_delivery
+    if (time_slots_delivery != 'unknown') {
         
       output += `<h2>Beschikbare bezorgmomenten</h2>`;
         
-      const state = hass.states['sensor.jumbo_time_slots'];    
+      const state = hass.states[time_slots_delivery];    
       var cudate = `0000`;
       var showtimeslot = 'yes';
       var numdays = 0;
@@ -79,7 +81,7 @@ class JumboOverviewCard extends HTMLElement {
         
           if (cudate != startdate ){
             
-            if (numdays < timeslot_days){
+            if (numdays < time_slots_delivery_days){
             
               if (cudate != `0000`){
                 output += `</div>`;
@@ -107,7 +109,57 @@ class JumboOverviewCard extends HTMLElement {
     
       output += `</div>`;
     }
-    //END Loop timeslots
+    //END Loop timeslots delivery
+
+    //START Loop timeslots_pickup
+
+	
+    if (time_slots_pickup != 'unknown') {
+        
+      output += `<h2>Beschikbare pickup momenten</h2>`;
+        
+      const state = hass.states[time_slots_pickup];    
+      var cudate = `0000`;
+      var showtimeslot = 'yes';
+      var numdays = 0;
+     
+    
+      for (const key of state.attributes.time_slots) {
+          
+          var start = new Date(key.start_date_time);
+          var startdate = (start.getDate() + '-' + (start.getMonth() +1) + '-' +  start.getFullYear());
+        
+          if (cudate != startdate ){
+            
+            if (numdays < time_slots_pickup_days){
+            
+              if (cudate != `0000`){
+                output += `</div>`;
+              }
+            
+              cudate = startdate;
+              output += `<h3> ` + startdate + `</h3><div class="jumbo-grid-container" id="` + startdate + `">`;
+              
+              numdays++;
+              
+            } else {
+                
+                showtimeslot = 'no';
+                
+            }
+            
+          }
+        
+          if (showtimeslot === 'yes'){
+             output += `<div class="jumbo-grid-item"><b>`+ (start.getHours()<10?'0':'') + start.getHours() + `:` +  (start.getMinutes()<10?'0':'') + start.getMinutes() + `</b><br>&euro; `+ (key.price.amount /100) +`</div> `;
+          }
+       
+       
+      }
+    
+      output += `</div>`;
+    }
+    //END Loop timeslots delivery
 
 
 

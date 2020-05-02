@@ -1,4 +1,3 @@
-
 ## Warning
 This component requires that the custom Jumbo components to be installed:
 More information: https://github.com/peternijssen/home-assistant-jumbo
@@ -14,21 +13,23 @@ resources:
 ```
 
 ## Configuration options
-Option          | Values        | Default   | Details
---              | -             | -         | -
-show_basket | `true/false` | `true` | Define if the card should display the available timeslots.
-show_timeslots | `true/false` | `true` | Define if the card should display the available timeslots.
-timeslot_days | `int` | `99` | Define of how many days of timeslots should be displayed.
+Option          		| Values        | Default   | Details
+--              		| -             | -     	| -
+time_slots_delivery 	| `sensor` 		| 			| The sensor that contains the Jumbo deliverie timeslots, it not defined its not visible.
+time_slots_delivery_days| `int` 		| `99` 		| Define of how many days of timeslots should be displayed.
+time_slots_pickup 		| `sensor` 		| 			| The sensor that contains the Jumbo pickup timeslots, it not defined its not visible.
+time_slots_pickup_days 	| `int` 		| `99` 		| Define of how many days of timeslots should be displayed.
+deliveries 				| `sensor` 		| 			| The sensor that contains the Jumbo deliveries, it not defined its not visible.
+basket 					| `sensor` 		| 			| The sensor that contains the Jumbo basket, it not defined its not visible.
 
 
 ## Example config:
 
-```title: Jumbo card
-type: 'custom:jumbo-card'
-show_timeslots: true
-timeslot_days: 2
-show_basket: true
-show_orders: true
+```type: 'custom:jumbo-card'
+time_slots_delivery: sensor.jumbo_time_slots
+time_slots_delivery: 2
+deliveries: sensor.jumbo_orders
+basket: sensor.jumbo_basket
 ```
 
 
