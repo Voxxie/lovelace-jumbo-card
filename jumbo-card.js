@@ -34,6 +34,7 @@ class JumboOverviewCard extends HTMLElement {
     const time_slots_pick_up = this.config.time_slots_pick_up ? this.config.time_slots_pick_up : 'unknown';
 	const time_slots_pick_up_days = this.config.time_slots_pick_up_days ? this.config.time_slots_pick_up_days : '99';
     const deliveries = this.config.deliveries ? this.config.deliveries : 'unknown';
+    const pick_ups = this.config.pick_ups ? this.config.pick_ups : 'unknown';
     const basket = this.config.basket ? this.config.basket : 'unknown';
 	
 
@@ -57,9 +58,45 @@ class JumboOverviewCard extends HTMLElement {
 
     //START Loop orders
     if (deliveries != 'unknown') {
+		
+		output += `<h2>Huidige orders</h2><table><tr><th>Datum</th><th>Tijd</th><th>Bedrag</th><th>Status</th></tr>`;
+		  
+		const state = hass.states[deliveries]; 
+    
+      for (const key of state.attributes.deliveries) {
+		  
+		  var orderdate = new Date(key.date);
+          var orderdate = (orderdate.getDate() + '-' + (orderdate.getMonth() +1) + '-' +  orderdate.getFullYear());
+		  
+		  output += `<tr><td>`+ orderdate +`</td><td>`+ key.time +`</td><td>`+ (key.price.amount / 100) +`</td><td>`+ status +`</td></tr>`;
+		  
+	  }
+	  
+	  output += `</table>`;
         
     }
     //END Loop orders
+
+    //START Loop pickups
+    if (pick_ups != 'unknown') {
+		
+		output += `<h2>Huidige orders</h2><table><tr><th>Datum</th><th>Tijd</th><th>Bedrag</th><th>Status</th></tr>`;
+		  
+		const state = hass.states[pick_ups]; 
+    
+      for (const key of state.attributes.pick_ups) {
+		  
+		  var orderdate = new Date(key.date);
+          var orderdate = (orderdate.getDate() + '-' + (orderdate.getMonth() +1) + '-' +  orderdate.getFullYear());
+		  
+		  output += `<tr><td>`+ orderdate +`</td><td>`+ key.time +`</td><td>`+ (key.price.amount / 100) +`</td><td>`+ status +`</td></tr>`;
+		  
+	  }
+	  
+	  output += `</table>`;
+        
+    }
+    //END Loop pickups
 
 
 

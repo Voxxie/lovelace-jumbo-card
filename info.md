@@ -7,6 +7,8 @@ More information: https://github.com/peternijssen/home-assistant-jumbo
 * Display of your current basket
 * Display of the available time slots for pickup.
 * Display of the available time slots for delivery.
+* Display the current open deliveries
+* Display the current open pickups
 
 ## Configuration options
 Option          		| Values        | Default   | Details
