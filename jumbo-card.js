@@ -68,7 +68,7 @@ class JumboOverviewCard extends HTMLElement {
 		  var orderdate = new Date(key.date);
           var orderdate = (orderdate.getDate() + '-' + (orderdate.getMonth() +1) + '-' +  orderdate.getFullYear());
 		  
-		  output += `<tr><td>`+ orderdate +`</td><td>`+ key.time +`</td><td>`+ (key.price.amount / 100) +`</td><td>`+ status +`</td></tr>`;
+		  output += `<tr><td>`+ orderdate +`</td><td>`+ key.time +`</td><td>&euro; `+ (key.price.amount / 100) +`</td><td>`+ status +`</td></tr>`;
 		  
 	  }
 	  
@@ -89,7 +89,7 @@ class JumboOverviewCard extends HTMLElement {
 		  var orderdate = new Date(key.date);
           var orderdate = (orderdate.getDate() + '-' + (orderdate.getMonth() +1) + '-' +  orderdate.getFullYear());
 		  
-		  output += `<tr><td>`+ orderdate +`</td><td>`+ key.time +`</td><td>`+ (key.price.amount / 100) +`</td><td>`+ status +`</td></tr>`;
+		  output += `<tr><td>`+ orderdate +`</td><td>`+ key.time +`</td><td>&euro; `+ (key.price.amount / 100) +`</td><td>`+ status +`</td></tr>`;
 		  
 	  }
 	  
