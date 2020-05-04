@@ -31,8 +31,8 @@ class JumboOverviewCard extends HTMLElement {
     //Define show parameters, and set them to a value if nog defined.
     const time_slots_delivery = this.config.time_slots_delivery ? this.config.time_slots_delivery : 'unknown'
 	const time_slots_delivery_days = this.config.time_slots_delivery_days ? this.config.time_slots_delivery_days : '99';
-    const time_slots_pickup = this.config.time_slots_pickup ? this.config.time_slots_pickup : 'unknown';
-	const time_slots_pickup_days = this.config.time_slots_pickup_days ? this.config.time_slots_pickup_days : '99';
+    const time_slots_pick_up = this.config.time_slots_pick_up ? this.config.time_slots_pick_up : 'unknown';
+	const time_slots_pick_up_days = this.config.time_slots_pick_up_days ? this.config.time_slots_pick_up_days : '99';
     const deliveries = this.config.deliveries ? this.config.deliveries : 'unknown';
     const basket = this.config.basket ? this.config.basket : 'unknown';
 	
@@ -114,11 +114,11 @@ class JumboOverviewCard extends HTMLElement {
     //START Loop timeslots_pickup
 
 	
-    if (time_slots_pickup != 'unknown') {
+    if (time_slots_pick_up != 'unknown') {
         
       output += `<h2>Beschikbare pickup momenten</h2>`;
         
-      const state = hass.states[time_slots_pickup];    
+      const state = hass.states[time_slots_pick_up];    
       var cudate = `0000`;
       var showtimeslot = 'yes';
       var numdays = 0;
@@ -131,7 +131,7 @@ class JumboOverviewCard extends HTMLElement {
         
           if (cudate != startdate ){
             
-            if (numdays < time_slots_pickup_days){
+            if (numdays < time_slots_pick_up_days){
             
               if (cudate != `0000`){
                 output += `</div>`;
